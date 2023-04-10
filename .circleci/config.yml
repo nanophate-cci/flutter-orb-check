@@ -3,9 +3,9 @@ orbs:
   flutter: circleci/flutter@2.0.0
 jobs:
   build:
-  macos:
-    xcode: "14.2.0"
-  resource_class: medium
+    macos:
+      xcode: 14.2.0
+    resource_class: macos.x86.medium.gen2
     steps:
       - flutter/install_sdk_and_pub:
           version: 3.7.9
