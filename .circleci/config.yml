@@ -15,7 +15,6 @@ jobs:
           name: check before $PATH
           command: echo $PATH
           when: always 
-      - run: echo "export PATH=~/project/flutter/bin:$PATH" >> "$BASH_ENV"
       - run:
           name: check after $PATH
           command: echo $PATH
