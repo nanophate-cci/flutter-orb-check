@@ -2,11 +2,27 @@ version: '2.1'
 orbs:
   flutter: circleci/flutter@2.0.0
 jobs:
-  build:
+  mac-os:
     macos:
-      xcode: 14.2.0
+      xcode: << parameters.version >>
     resource_class: macos.x86.medium.gen2
     steps:
+      - run:
+        name: check before $PATH
+        command: echo $PATH
+        when: always 
       - flutter/install_sdk_and_pub:
           version: 3.7.9
-      - run: bundle -h
+      - run:
+        name: check after $PATH
+        command: echo $PATH
+        when: always 
+
+     
+workflows:
+  workflow-mac:
+    jobs:
+      - mac-os:
+          matrix:
+            parameters:
+              version: ["14.1.0","14.2.0", "14.3.0"]
