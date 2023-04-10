@@ -8,15 +8,15 @@ jobs:
     resource_class: macos.x86.medium.gen2
     steps:
       - run:
-        name: check before $PATH
-        command: echo $PATH
-        when: always 
+          name: check before $PATH
+          command: echo $PATH
+          when: always 
       - flutter/install_sdk_and_pub:
           version: 3.7.9
       - run:
-        name: check after $PATH
-        command: echo $PATH
-        when: always 
+          name: check after $PATH
+          command: echo $PATH
+          when: always 
 
      
 workflows:
