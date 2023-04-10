@@ -20,6 +20,7 @@ jobs:
           name: check after $PATH
           command: echo $PATH
           when: always 
+      - run: rbenv -v
 
      
 workflows:
