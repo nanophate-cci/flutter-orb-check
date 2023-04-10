@@ -15,8 +15,7 @@ jobs:
           name: check before $PATH
           command: echo $PATH
           when: always 
-      - flutter/install_sdk_and_pub:
-          version: 3.7.9
+      - run: echo "export PATH=$INSTALL_LOCATION/flutter/bin:$PATH" >> "$BASH_ENV"
       - run:
           name: check after $PATH
           command: echo $PATH
