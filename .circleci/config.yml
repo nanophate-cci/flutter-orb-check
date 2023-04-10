@@ -3,6 +3,10 @@ orbs:
   flutter: circleci/flutter@2.0.0
 jobs:
   mac-os:
+    parameters:
+      version:
+        default: ""
+        type: string
     macos:
       xcode: << parameters.version >>
     resource_class: macos.x86.medium.gen2
