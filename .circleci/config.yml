@@ -3,8 +3,9 @@ orbs:
   flutter: circleci/flutter@2.0.0
 jobs:
   build:
-    executor:
-      name: android/android-machine
+  macos:
+    xcode: "14.2.0"
+  resource_class: medium
     steps:
       - flutter/install_sdk_and_pub:
           version: 3.7.9
