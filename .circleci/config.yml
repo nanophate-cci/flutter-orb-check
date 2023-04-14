@@ -24,7 +24,7 @@ jobs:
 
      
 workflows:
-  workflow-mac:
+  build:
     jobs:
       - mac-os:
           matrix:
