@@ -2,7 +2,7 @@ version: '2.1'
 orbs:
   flutter: circleci/flutter@2.0.0
 jobs:
-  mac-os:
+  build:
     parameters:
       version:
         default: ""
@@ -26,7 +26,7 @@ jobs:
 workflows:
   build:
     jobs:
-      - mac-os:
+      - build:
           matrix:
             parameters:
               version: ["14.1.0","14.2.0", "14.3.0"]
